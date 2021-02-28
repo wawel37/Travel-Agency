@@ -1,6 +1,6 @@
 # Travel-Agency
 
-FrontEnd Application created as an part of my college course (*Introduction to Web Applications*)
+Frontend Application created as an part of my college course (*Introduction to Web Applications*)
 
 It works similar to many online travel agencies (*except the purchase process*).
 
