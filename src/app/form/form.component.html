@@ -1,0 +1,51 @@
+<p id="form-title">Add a new tour</p>
+
+<div class="form-wrapper">
+  <form [formGroup]="modelForm" (ngSubmit)="submitForm(modelForm)">
+    <mat-form-field class="formfield" appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name"><br>
+    </mat-form-field>
+
+    <mat-form-field class="formfield" appearance="fill">
+      <mat-label>Destiantion</mat-label>
+      <input matInput formControlName="country"><br>
+    </mat-form-field>
+
+    <mat-form-field class="formfield" appearance="fill">
+      <mat-label>Price</mat-label>
+      <input matInput formControlName="price"><br>
+    </mat-form-field>
+
+    <mat-form-field class="formfield" appearance="fill">
+      <mat-label>Capacity</mat-label>
+      <input matInput formControlName="capacity"><br>
+    </mat-form-field>
+
+    <mat-form-field class="formfield" appearance="fill">
+      <mat-label>Description</mat-label>
+      <input matInput formControlName="description"><br>
+    </mat-form-field>
+
+    <mat-form-field class="formfield" appearance="fill">
+      <mat-label>Img Path</mat-label>
+      <input matInput formControlName="img_link"><br>
+    </mat-form-field>
+
+    <mat-form-field class="formfield2" appearance="fill">
+      <mat-label>Start Date</mat-label>
+      <input matInput [matDatepicker]="picker1" formControlName="start_date" min="{{todayDate | date:'yyyy-MM-dd'}}" max="{{modelForm.value.end_date | date:'yyyy-MM-dd'}}">
+      <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+      <mat-datepicker #picker1></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field class="formfield2" appearance="fill">
+      <mat-label>End Date</mat-label>
+      <input matInput [matDatepicker]="picker2" formControlName="end_date" min="{{modelForm.value.start_date | date:'yyyy-MM-dd'}}">
+      <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+      <mat-datepicker #picker2></mat-datepicker>
+    </mat-form-field>
+
+    <button mat-raised-button color="accent" type="submit">Add tour</button>
+   </form>
+</div>

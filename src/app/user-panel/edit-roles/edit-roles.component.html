@@ -1,0 +1,12 @@
+<div *ngIf="userDataList != null">
+  <div *ngFor="let user of userDataList" class="user">
+    <p class="title">{{user.email}}</p>
+    <div class="roles">
+      <ng-container *ngFor="let role of user.rolesKeys; let i = index">
+        <mat-checkbox [checked]="user.rolesValues[i]" (change)="checkValueChanged($event, user, role)">{{role}}</mat-checkbox>
+      </ng-container>
+    </div>
+
+
+  </div>
+</div>

@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+.main-wrapper{
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
+}
+#title{
+  margin-top: 20px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 35px;
+}
+#text-content{
+  font-family: 'Poppins';
+  display: grid;
+  grid-template-columns: 40% 60%;
+}
+#statistics > p{
+  text-align: center;
+}
+#date{
+  font-weight: bold;
+  color: blue;
+  background: lightgrey;
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+#description > p{
+  text-align: center;
+}
+.img-wrapper > img{
+  width: 400px;
+  height: 300px;
+  padding: 1%;
+  border: 3px solid #ffd740;
+}
+.img-wrapper{
+  margin-right: 5%;
+}
+.content-wrapper{
+  position: relative;
+  width: 50%;
+  box-shadow: 1px 1px 10px;
+  border-radius: 5px;
+  height: 300px;
+}
+.button-panel{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  background: lightgrey;
+}
+.button-panel > button{
+  margin-left: 5%;
+  margin-right: 5%;
+  width: 25%;
+}
+.content-wrapper > p{
+  text-align: center;
+}
+@media (max-width: 950px){
+  .main-wrapper{
+    flex-flow:column;
+    align-items: center;
+    justify-content: center;
+  }
+  .content-wrapper{
+    margin-top: 5%;
+    width: 90%;
+  }
+  .img-wrapper{
+    margin: 0;
+  }
+}
+@media (max-width: 440px){
+  .img-wrapper{
+    width: 100%;
+  }
+  .img-wrapper > img{
+    width: 96%;
+    height: auto;
+  }
+}

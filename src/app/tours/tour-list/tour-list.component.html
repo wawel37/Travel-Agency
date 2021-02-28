@@ -1,0 +1,35 @@
+<app-filter [myTours]="recievedTours"
+[minPrice]="minPrice"
+[maxPrice]="maxPrice"
+(newRate)="recievedRate($event)"
+(newDestinations)="recievedDestinations($event)"
+(newMaxPrice)="recievedMaxPrice($event)"
+(newMinPrice)="recievedMinPrice($event)"
+(newBeginDate)="recievedBeginDate($event)"
+(newEndDate)="recievedEndDate($event)"></app-filter>
+<router-outlet></router-outlet>
+
+<p id="toursum" [ngStyle]="participantSum > 10 ? {'background': 'green'} : {'background': 'red'}">Tours sum: {{participantSum}}</p>
+
+<div class="tour-wrapper">
+  <ng-container *ngFor="let tour of recievedTours; let i = index">
+
+    <div class="tour" *ngIf="filterValidation(tour, i)">
+
+      <div class="img-wrapper">
+        <img src="{{tour.img_link}}">
+      </div>
+
+      <p [ngClass]="toursStyle(tour, i)" class="title">{{tour.name | uppercase}}</p>
+      <p class="info">{{tour.country}}</p>
+      <p class="info">{{tour.price}}$</p>
+
+      <button mat-raised-button routerLink="/tourdetails/{{tour.name}}" color='accent' routerLinkActive='active'>Details</button>
+
+      <div *ngIf="userData != null && userData.roles.admin" class="button-panel">
+        <button id="delete-button" mat-flat-button color="warn" id="deleteTour" (click)="deleteTour(tour)">Delete</button>
+      </div>
+    </div>
+  </ng-container>
+</div>
+

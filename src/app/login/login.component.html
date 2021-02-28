@@ -1,0 +1,18 @@
+<div class="title">
+  <p>Log in</p>
+</div>
+<div class="form-wrapper">
+  <form [formGroup]="modelForm" (ngSubmit)="submitForm(modelForm)">
+    <mat-form-field class="formfield" appearance="fill">
+      <mat-label>E-Mail</mat-label>
+      <input type="email" matInput formControlName="email"><br>
+    </mat-form-field><br>
+
+    <mat-form-field class="formfield" appearance="fill">
+      <mat-label>Password</mat-label>
+      <input type="password" matInput formControlName="password"><br>
+    </mat-form-field><br>
+
+    <button mat-raised-button color="accent" type="submit">Log in</button>
+   </form>
+</div>

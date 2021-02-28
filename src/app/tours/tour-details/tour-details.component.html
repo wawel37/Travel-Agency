@@ -1,0 +1,30 @@
+  <p id="title" *ngIf="tour != null">{{tour.name}}</p>
+  <div class="main-wrapper" *ngIf="tour != null">
+    <div class="img-wrapper">
+      <img src="{{tour.img_link}}" alt="tourImage">
+    </div>
+    <div class="content-wrapper">
+      <app-rating [participants]="userCounter" [tour]="tour"></app-rating>
+      <p id="date">{{tour.start_date}}  -  {{tour.end_date}}</p>
+      <div id="text-content">
+        <div id="statistics">
+          <p>Destination: {{tour.country}}</p>
+          <p>{{tour.price}}$</p>
+          <p class="capacity">{{participantCounter}}/{{tour.capacity}}</p>
+
+        </div>
+        <div id="description">
+          <p>{{tour.description}}</p>
+        </div>
+      </div>
+
+
+      <div class="button-panel">
+        <button *ngIf="userData != null && userData.roles.admin" mat-flat-button color="accent" id="deleteTour" (click)="deleteTour()">Delete</button>
+        <button *ngIf="tour.reserved < tour.capacity" mat-flat-button color="primary" id="addParticipant"  type="button" (click)="addParticipant()">[+]</button>
+        <button *ngIf="participantCounter > 0 && userCounter > 0" mat-flat-button color="warn" id="removeParticipant"  (click)="removeParticipant()">[-]</button>
+      </div>
+    </div>
+
+  </div>
+

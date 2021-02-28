@@ -1,0 +1,73 @@
+*{
+  font-family: Arial;
+}
+p{
+  margin: 0;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+ul{
+  margin: auto;
+  list-style: none;
+  padding: 0;
+}
+#filterContent{
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+.subPrice{
+  width: 176px;
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+}
+.subPrice > p{
+  font-size: 14px;
+}
+.minPrice{
+  text-align: left;
+}
+.maxPrice{
+  text-align: right;
+}
+.markedPrice{
+  color: #6495ED;
+  text-align: center;
+}
+#filterContent2{
+  margin: auto;
+  width: 176px;
+}
+#destinations{
+  font-size: 20px;
+  margin-bottom: 10px;
+  display: block;
+  text-align: center;
+}
+.inputCaption{
+  text-align: center;
+  font-size: 14px;
+}
+.slider{
+  width: 176px;
+  padding: 0;
+  margin: auto;
+}
+#rangeWarning{
+  color: red;
+  font-size: 10px;
+}
+#filterContent3{
+  margin: auto;
+}
+#filterContent4{
+  margin: auto;
+}
+.myContainer , #filterContent2, #filterContent3, #filterContent4{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+@media (max-width: 700px){
+  #filterContent{
+    grid-template-columns: 100%;
+  }
+}

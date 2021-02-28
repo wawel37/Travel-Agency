@@ -1,0 +1,62 @@
+<div id="filterContent">
+
+  <div id="filterContent2">
+
+    <p class="inputCaption">Min Price</p>
+    <mat-slider name="minPrice" class="slider" min="{{minPrice}}" max="{{maxPrice}}" step="1" thumbLabel tickInterval="1" (change)="changedMinPrice($event)"></mat-slider>
+    <!-- <input name="minPrice" type="range" min={{minPrice}} max={{maxPrice}} (change)="changedPrice($event)"> -->
+    <div class="subPrice">
+      <p class="minPrice">{{minPrice}}</p>
+      <p class="markedPrice">{{markedMinPrice}}</p>
+      <p class="maxPrice">{{maxPrice}}</p>
+    </div>
+    <p class="inputCaption">Max Price</p>
+    <mat-slider name="maxPrice" class="slider" min="{{minPrice}}" max="{{maxPrice}}" step="1" value="{{maxPrice}}" thumbLabel tickInterval="1" (change)="changedMaxPrice($event)"></mat-slider>
+    <div class="subPrice">
+      <p class="minPrice">{{minPrice}}</p>
+      <p class="markedPrice">{{markedMaxPrice}}</p>
+      <p class="maxPrice">{{maxPrice}}</p>
+    </div>
+
+    <p id="rangeWarning" *ngIf="markedMaxPrice < markedMinPrice">Max Price must be greater than Min Price!!!</p>
+  </div>
+
+  <ul class="myContainer">
+    <p id="destinations">Destinations</p>
+    <li *ngFor="let destination of destinations">
+      <input name={{destination}} type="checkbox" (change)="changedDestinations($event)">{{destination}}
+    </li>
+  </ul>
+
+  <div id="filterContent3">
+    <ul>
+      <li *ngFor="let rate of rates; let i = index">
+        <input name="{{i + 1}}" type="checkbox" (change)="changedRate($event)">{{rate}}
+      </li>
+    </ul>
+  </div>
+
+  <div id="filterContent4">
+    <!-- <p class="inputCaption">Begin Date</p>
+    <input name="beginDate" type="date" min="{{todayDate | date:'yyyy-MM-dd'}}" max="{{markedEndDate | date:'yyyy-MM-dd'}}" (change)="changedBeginDate($event)"> -->
+    <form>
+      <mat-form-field appearance="fill">
+        <mat-label>Start Date</mat-label>
+        <input matInput [matDatepicker]="picker1" min="{{todayDate | date:'yyyy-MM-dd'}}" max="{{markedEndDate | date:'yyyy-MM-dd'}}" (dateChange)="changedBeginDate($event)">
+        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+      </mat-form-field>
+    </form>
+    <!-- <p class="inputCaption">End Date</p>
+    <input name="endDate" type="date" min="{{markedBeginDate | date:'yyyy-MM-dd'}}" (change)="changedEndDate($event)"> -->
+    <form>
+      <mat-form-field appearance="fill">
+        <mat-label>End Date</mat-label>
+        <input matInput [matDatepicker]="picker2" min="{{markedBeginDate | date:'yyyy-MM-dd'}}" (dateChange)="changedEndDate($event)">
+        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+        <mat-datepicker #picker2></mat-datepicker>
+      </mat-form-field>
+    </form>
+
+  </div>
+</div>

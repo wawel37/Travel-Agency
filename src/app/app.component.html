@@ -1,0 +1,14 @@
+<mat-toolbar class="nav-bar" color="primary">
+  <button id="home" mat-button routerLink='tours' routerLinkActive='active'>HOME</button>
+  <button mat-flat-button routerLink='cart' color='accent' routerLinkActive='active'>CART</button>
+  <span class="spacer"></span>
+  <ul class="log-navbar">
+    <li><button *ngIf="isLogged == false" mat-button routerLink='login' routerLinkActive='active'>Log in</button></li>
+    <li><button *ngIf="isLogged == false" mat-button routerLink='signup' routerLinkActive='active'>Sign Up</button></li>
+    <li><button *ngIf="isLogged == true" mat-button (click)='logOut()'>Log Out</button></li>
+    <li><button *ngIf="isLogged == true" mat-button routerLink='userPanel' routerLinkActive='active'>User Panel</button></li>
+    <li><span class="email" *ngIf="isLogged == true">Logged in as: {{email}}</span></li>
+  </ul>
+</mat-toolbar>
+<router-outlet></router-outlet>
+

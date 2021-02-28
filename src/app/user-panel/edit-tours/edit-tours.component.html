@@ -1,0 +1,29 @@
+<div *ngIf="toursList != null" class="toursWrapper">
+    <div *ngFor="let tour of toursList" class="tour">
+
+      <p class="title">{{tour.name}}</p>
+
+      <div class="content">
+
+        <div class="text-conent">
+          <p>Tour destination: {{tour.country}}</p>
+          <p>Tour price: {{tour.price}}</p>
+          <p>Tour start date: {{tour.start_date}}</p>
+          <p>Tour end date: {{tour.end_date}}</p>
+          <p>Tour reserved places: {{tour.reserved}}/{{tour.capacity}}</p>
+          <p>Tour rate: {{tour.rate}}</p>
+        </div>
+
+        <div class="photo-conent">
+          <img src={{tour.img_link}}>
+        </div>
+
+      </div>
+
+      <div *ngIf="userData != null" class="buttons">
+        <button mat-flat-button routerLink='editToursDetails/{{tour.name}}' color='accent' routerLinkActive='active'>Edit</button>
+        <button *ngIf="userData.roles.admin" mat-flat-button color='warn' (click)="deleteTour(tour)">Delete</button>
+      </div>
+    </div>
+
+</div>

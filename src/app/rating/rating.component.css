@@ -1,0 +1,22 @@
+#rating {
+    unicode-bidi: bidi-override;
+    direction: rtl;
+    padding-right: 5%;
+    background: #673ab7;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding-top: 5px;
+  }
+  #rating > span {
+    display: inline-block;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    font-size: 25px;
+  }
+  #rating > span:hover:before,
+  #rating > span:hover ~ span:before {
+     content: "\2605";
+     color: yellow;
+     position: absolute;
+  }

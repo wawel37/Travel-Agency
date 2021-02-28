@@ -1,0 +1,15 @@
+.title{
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+}
+.user{
+  width: 60%;
+  margin: auto;
+  margin-top: 5%;
+}
+.roles{
+  display: flex;
+  justify-content: center;
+  flex: 1 0 0;
+}

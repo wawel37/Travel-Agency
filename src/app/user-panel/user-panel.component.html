@@ -1,0 +1,13 @@
+<div class="wrapper" *ngIf="userData != null">
+
+  <div *ngIf="userData.roles.admin == true" class="persistence">
+      <app-persistence class="persistence"></app-persistence>
+  </div>
+
+  <div class="panelOptions" *ngIf="userData.roles.admin || userData.roles.editor">
+    <button mat-flat-button color='accent' (click)="navigateToForm()">Add new Tour</button>
+    <button mat-flat-button color='accent' (click)="navigateToEditTours()">Edit Tours</button>
+    <button mat-flat-button color='accent' (click)="navigateToEditRoles()">Edit Roles</button>
+  </div>
+</div>
+

@@ -1,0 +1,11 @@
+<div *ngIf="tourData != null">
+  <div *ngFor="let key of tourKeys">
+    <form *ngIf="key != 'key' && key != 'name'" [formGroup]="modelForm" (ngSubmit)="submitForm(modelForm, key)">
+      <mat-form-field class="formfield" appearance="fill">
+        <mat-label>{{key | uppercase}}</mat-label>
+        <input matInput formControlName={{key}}><br>
+      </mat-form-field>
+      <button mat-raised-button color="accent" type="submit">Update {{key | uppercase}}</button>
+    </form>
+  </div>
+</div>

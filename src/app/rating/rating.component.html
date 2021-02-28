@@ -1,0 +1,6 @@
+<div [ngStyle]="tour.capacity < participants + 2 ? {'background': '#ffd740'} : null" id="rating">
+    <span *ngFor="let j of [].constructor(5); let k = index" (click)="rating(5 - k)">
+      <div style="color: yellow;" *ngIf="5 - k <= tour.rate else elseRates">★</div>
+      <ng-template #elseRates>☆</ng-template>
+    </span>
+</div>

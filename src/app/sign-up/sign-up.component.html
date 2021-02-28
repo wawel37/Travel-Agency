@@ -1,0 +1,33 @@
+<div class="title">
+  <p>Registration</p>
+</div>
+<div class="form-wrapper">
+  <form [formGroup]="modelForm" (ngSubmit)="submitForm(modelForm)">
+    <mat-form-field class="formfield" appearance="fill">
+      <mat-label>E-Mail</mat-label>
+      <input matInput formControlName="email"><br>
+    </mat-form-field><br>
+
+    <mat-form-field class="formfield" appearance="fill">
+      <mat-label>Password</mat-label>
+      <input type="password" matInput formControlName="password"><br>
+    </mat-form-field><br>
+
+    <mat-form-field class="formfield" appearance="fill">
+      <mat-label>First Name</mat-label>
+      <input matInput formControlName="firstname"><br>
+    </mat-form-field><br>
+
+    <mat-form-field class="formfield" appearance="fill">
+      <mat-label>Last Name</mat-label>
+      <input matInput formControlName="lastname"><br>
+    </mat-form-field><br>
+
+    <mat-form-field class="formfield" appearance="fill">
+      <mat-label>City</mat-label>
+      <input matInput formControlName="city"><br>
+    </mat-form-field><br>
+
+    <button mat-raised-button color="accent" type="submit">Sign up</button>
+   </form>
+</div>

@@ -1,0 +1,14 @@
+<div class="form-wrapper">
+  <form [formGroup]="modelForm" (ngSubmit)="submitForm(modelForm)">
+    <mat-form-field class="formfield" appearance="fill">
+      <mat-label>Type of Persistence</mat-label>
+      <mat-select formControlName="persistence">
+        <mat-option value="local">Local</mat-option>
+        <mat-option value="session">Session</mat-option>
+        <mat-option value="none">None</mat-option>
+      </mat-select>
+    </mat-form-field><br>
+
+    <button mat-raised-button color="accent" type="submit">Change</button>
+   </form>
+</div>

@@ -1,0 +1,57 @@
+#title{
+  text-align: center;
+  font-weight: bold;
+  font-size: 4vw;
+  margin-top: 4%;
+}
+.wrapper{
+  margin-top: 4%;
+  display: grid;
+  grid-template-columns: 80% 20%;
+}
+.sum-content{
+  display: flex;
+  flex-direction: column;
+}
+.cart-items{
+  display: flex;
+  flex-direction: row;
+  margin: 3%;
+  box-shadow: 5px 5px 5px;
+  min-height: 100px;
+  align-items: center;
+  justify-content: center;
+}
+.cart-items > p{
+  text-align: center;
+  flex: 3 1 0;
+  font-size: calc(20px + 1vw);
+}
+.tours-content{
+  display: flex;
+  flex-direction: column;
+}
+.button-panel{
+  display: flex;
+  flex-direction: row;
+  flex: 1 1 0;
+  justify-content: center;
+}
+.button-panel > button{
+  margin: 2%;
+}
+.total{
+  text-align: center;
+  font-size: calc(0.5vw + 20px);
+  font-weight: bold;
+}
+.sum-content > button{
+  display: block;
+  width: 80%;
+  margin: auto;
+  margin-top: 10%;
+  height: 10vw;
+  font-weight: bold;
+  font-size: 2vw;
+  text-align: center;
+}
